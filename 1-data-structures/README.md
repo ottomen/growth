@@ -1,12 +1,14 @@
 # Big O
 
-Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity.
+Big O notation is a mathematical asymptotical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity.
+
+The letter O stand for Ordnung, meaning the order of approximation. The letter O is used because the growth rate of a function is also referred to as the order of the function.
 
 ### Formula
 
-$${f(x)} \in O(g(x))$$
+$${f(x)} \in O(g(x)) \ where \ {x \to \infty}$$
 
-### Growth functions g(x)
+### Growth functions g(x) classification
 
 | Big O Notation |    Name     | Example Operations                               |
 | :------------- | :---------: | :----------------------------------------------- |
@@ -21,7 +23,7 @@ $${f(x)} \in O(g(x))$$
 
 ### Chart
 
-![alt text](./images/Comparison_computational_complexity.svg.png)
+[<img src="./images/Comparison_computational_complexity.svg.png" width="550"/>](./images/Comparison_computational_complexity.svg.png)
 
 ### Data structures
 
@@ -42,7 +44,11 @@ console.log(arr.find((item) => item === 10));
 | ------ | ------------- | ------------- | ------ | ---- |
 | O(1)   | O(1) by index | O(1) by index | O(n)   | O(n) |
 
-#### Stack
+#### Stack (LIFO)
+
+[<img src="./images/Lifo_stack.svg" width="450"/>](./images/Lifo_stack.svg)
+
+LIFO is an abbreviation for last in, first out.
 
 ```javascript
 const stack = [];
@@ -58,6 +64,10 @@ stack.pop();
 
 #### Queue
 
+[<img src="./images/450px-Fifo_queue.png" width="450"/>](./images/450px-Fifo_queue.png)
+
+FIFO is an abbreviation for first in, first out.
+
 ```javascript
 const queue = [];
 queue.push(1);
@@ -71,7 +81,9 @@ console.log(arr.find((item) => item === 10));
 | ------ | --------------- | --------------- | ------------ | ---- |
 | O(1)   | O(1) peek front | O(1) front only | O(1) dequeue | O(n) |
 
-#### HashMap
+#### HashMap (dictionary)
+
+[<img src="./images/part8.2-hashmap.png" width="450"/>](./images/part8.2-hashmap.png)
 
 ```javascript
 const map = new Map();
@@ -88,6 +100,8 @@ console.log(map.has("key1"));
 
 #### Linked List
 
+[<img src="./images/CPT-LinkedLists-deletingnode.svg.png" width="550"/>](./images/CPT-LinkedLists-deletingnode.svg.png)
+
 ```javascript
 class Node {
   constructor(data) {
@@ -103,7 +117,9 @@ let head = new Node(1);
 | ------------ | ---- | ------ | ------ | ---- |
 | O(1) at head | O(n) | O(1)   | O(1)   | O(n) |
 
-#### Binary Search Tree
+#### Binary Search Tree (BST)
+
+[<img src="./images/Binary_search_tree.svg.png" width="350"/>](./images/Binary_search_tree.svg.png)
 
 ```javascript
 class BST {
@@ -143,6 +159,8 @@ matrix[0][0] = null;
 
 #### Graph
 
+[<img src="./images/Tred-G.svg" width="450"/>](./images/Tred-G.svg)
+
 ```javascript
 const graph = {
   A: ["B", "C"],
@@ -161,3 +179,33 @@ console.log("A" in graph);
 | Create      | Read           | Update        | Delete      | Find             |
 | ----------- | -------------- | ------------- | ----------- | ---------------- |
 | O(1) vertex | O(1) adjacency | O(1) add edge | O(V) vertex | O(V + E) BFS/DFS |
+
+### Examples
+
+##### 2078. Two Furthest Houses With Different Colors
+
+There are n houses evenly lined up on the street, and each house is beautifully painted. You are given a 0-indexed integer array colors of length n, where colors[i] represents the color of the ith house.
+
+Return the maximum distance between two houses with different colors.
+
+The distance between the ith and jth houses is abs(i - j), where abs(x) is the absolute value of x.
+
+What is Big O?
+
+```javascript
+function maxDistance(colors: number[]): number {
+  let furthestDistance: number = -Infinity;
+
+  for (let i = 0; i < colors.length; i += 1) {
+    for (let j = 0; j < colors.length; j += 1) {
+      if (i === j || colors[i] === colors[j]) continue;
+
+      const delta = Math.abs(i - j);
+
+      furthestDistance = Math.max(delta, furthestDistance);
+    }
+  }
+
+  return furthestDistance;
+}
+```
