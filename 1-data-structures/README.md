@@ -117,6 +117,22 @@ let head = new Node(1);
 | ------------ | ---- | ------ | ------ | ---- |
 | O(1) at head | O(n) | O(1)   | O(1)   | O(n) |
 
+## Linked List in React
+
+````ts
+const newHook: Hook = {
+      memoizedState: currentHook.memoizedState,
+
+      baseState: currentHook.baseState,
+      baseQueue: currentHook.baseQueue,
+      queue: currentHook.queue,
+
+      next: null,
+    };
+```
+
+Source code: https://github.com/facebook/react/blob/1721e73e149d482a4421d4ea9f76d36a2c79ad02/packages/react-reconciler/src/ReactFiberHooks.js#L980
+
 #### Binary Search Tree (BST)
 
 [<img src="./images/Binary_search_tree.svg.png" width="350"/>](./images/Binary_search_tree.svg.png)
@@ -132,7 +148,7 @@ class BST {
 
 let root = new BST(10);
 root.value = 15;
-```
+````
 
 | Create           | Read             | Update           | Delete           | Find             |
 | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
@@ -209,3 +225,4 @@ function maxDistance(colors: number[]): number {
   return furthestDistance;
 }
 ```
+
