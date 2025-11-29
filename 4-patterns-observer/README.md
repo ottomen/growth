@@ -37,7 +37,7 @@ Observable:
 import { Observable } from "rxjs";
 
 const observable = new Observable((subscriber) => {
-  subscriber.next(1);
+  subscriber.next(1); // update all active subscribers
   subscriber.next(2);
   subscriber.next(3);
   setTimeout(() => {
@@ -98,9 +98,10 @@ It is Stateful.
 ```ts
 import { Observable, Subject } from "rxjs";
 
+// The Core Primitive, class that makes the Redux state stream
 export class StateObservable<S> extends Observable<S> {
-  value: S;
-  private __notifier = new Subject<S>();
+  value: S; // State is here
+  private __notifier = new Subject<S>(); // internal observer/notifier
 
   constructor(input$: Observable<S>, initialState: S) {
     super((subscriber) => {
@@ -170,6 +171,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import { createEpicMiddleware } from "redux-observable";
 import { rootEpic, rootReducer } from "./modules/root";
 
+// The Setup
 const epicMiddleware = createEpicMiddleware();
 
 export default function configureStore() {
