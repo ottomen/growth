@@ -1,5 +1,16 @@
 # Proxy pattern
 
+In computer programming, the proxy pattern is a software design pattern. A proxy, in its most general form, is a class functioning as an interface to something else.
+The proxy could interface to anything: a network connection, a large object in memory, a file, or some other resource that is expensive or impossible to duplicate. In short, a proxy is a wrapper or agent object that is being called by the client to access the real serving object behind the scenes.
+
+## Use cases:
+
+- Access control (Protection Proxy)
+- Interceptors for original object (Interceptor Proxy)
+- Validation for setter/getter/apply of original object
+- Memoization/caching of values
+- Logging purposes
+
 ## Vanilla JS Proxy
 
 The Proxy object enables you to create a proxy for another object, which can intercept and redefine fundamental operations for that object.
@@ -17,14 +28,6 @@ console.log(proxiedObj.name);
 [Vanilla Proxy example](./vanilla-proxy.ts)
 
 Limitations: Proxy does not have direct access to the original object's private elements.
-
-### Use cases:
-
-- Access control (Protection Proxy)
-- Interceptors for original object (Interceptor Proxy)
-- Validation for setter/getter/apply of original object
-- Memoization/caching of values
-- Logging purposes
 
 ## Immer.js
 
