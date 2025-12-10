@@ -3,6 +3,11 @@
 In computer programming, the proxy pattern is a software design pattern. A proxy, in its most general form, is a class functioning as an interface to something else.
 The proxy could interface to anything: a network connection, a large object in memory, a file, or some other resource that is expensive or impossible to duplicate. In short, a proxy is a wrapper or agent object that is being called by the client to access the real serving object behind the scenes.
 
+## Actors
+
+- Subject - actual object that the Proxy represents
+- Proxy - surrogate or placeholder for the Subject
+
 ## Use cases:
 
 - Access control (Protection Proxy)
