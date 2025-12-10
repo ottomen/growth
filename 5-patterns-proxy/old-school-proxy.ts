@@ -1,7 +1,7 @@
 // Common interface needed
 interface IStorage {
-  getData(role: ERole): Map<string, any[]> | null;
-  setData(key: string, value: any[], role: ERole): void;
+  getData(role: ERole): Map<string, any> | null;
+  setData(key: string, value: any, role: ERole): void;
 }
 
 enum ERole {
@@ -11,17 +11,17 @@ enum ERole {
 
 // Subject
 class SessionStorage implements IStorage {
-  private data: Map<string, any[]>;
+  private data: Map<string, any>;
 
   constructor() {
     this.data = new Map();
   }
 
-  public getData(): Map<string, any[]> {
+  public getData(): Map<string, any> {
     return this.data;
   }
 
-  public setData(key: string, value: []): void {
+  public setData(key: string, value: any): void {
     this.data.set(key, value);
   }
 }
@@ -29,11 +29,7 @@ class SessionStorage implements IStorage {
 // In the classical Proxy design pattern, the Proxy object must follow the same shape (interface)
 // Protection Proxy
 class SessionStorageProxy implements IStorage {
-  private storage: SessionStorage;
-
-  constructor() {
-    this.storage = new SessionStorage();
-  }
+  constructor(private storage: SessionStorage = storage) { }
 
   private checkAccess(role: ERole) {
     return role === ERole.Admin;
@@ -57,7 +53,12 @@ class SessionStorageProxy implements IStorage {
   }
 }
 
-const sessionProxy = new SessionStorageProxy();
+const session = new SessionStorage();
+const sessionProxy = new SessionStorageProxy(session);
+
+session.setData(crypto.randomUUID(), {
+  createdAt: new Date().toISOString()
+})
 
 // Denied
 console.log(sessionProxy.getData(ERole.User));
