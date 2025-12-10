@@ -27,7 +27,7 @@ const traps: ProxyHandler<User> = {
 
     return true;
   },
-  // has -> trap for "in" oeprator
+  // has -> trap for "in" operator
   // apply -> trap form any method invocations
   // construct -> trap for "new" oeprator
 };
