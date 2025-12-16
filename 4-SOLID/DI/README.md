@@ -1,6 +1,6 @@
-# Dependency inversion (soliD)
+# Dependency inversion principle (soliD)
 
-The principle states:
+The principle follows the idea of **loosely coupled modules** and tells:
 
 - High-level modules should not import anything from low-level modules. Both should depend on abstractions (interfaces).
 - Abstractions should not depend on details. Details (Concrete implementations) should depend on abstractions.
@@ -12,10 +12,7 @@ we expose these instances through constructors, methods, and we operate on top o
 
 ## Dependency injection
 
-It is an implementation of Dependency inversion.
-
-Dependency Injection is a software design technique in which the creation and binding of dependencies are done outside of the dependent class.
-Dependency injection aims to separate the concerns of constructing objects and using them, leading to **loosely coupled** programs.
+It is an implementation of Dependency inversion. We conenct 2 classes via interfaces, not concrete implemenations, passing the instance, not the class itself.
 
 ### Types of dependency injections
 
@@ -29,49 +26,57 @@ There are a couple of ways in which a client can receive injected services:
 Instead of:
 
 ```typescript
-class User implements IUser {
-  private firstName: string;
-
-  constructor(firstName: string) {
-    this.firstName = firstName;
-  }
-}
-
-class Cart implements ICart {
-  private user: IUser;
+class Logger implements ILogger {
+  private data: Map<any>;
 
   constructor() {
-    // We create a tight coupling here, BAD!
-    this.user = new User("John");
-  }
-}
-```
-
-DI is about:
-
-```typescript
-class User implements IUser {
-  private firstName: string;
-
-  constructor(firstName: string) {
-    this.firstName = firstName;
+    this.data = new Map();
   }
 }
 
 class Cart implements ICart {
-  private user: IUser;
+  private logger: ILogger;
 
-  // Constructor Injection DI, we pass an Interface here
-  constructor(user: IUser) {
-    this.user = user;
+  constructor() {
+    // We create a tight coupling here by adding a concrete class, BAD!
+    this.logger = new Logger();
   }
 }
 
-const user = new User("John");
-const cart = new Cart(user);
+const cart = new Cart();
 ```
 
-#### Method Injection:
+Dependency injection is about:
+
+```typescript
+class Logger implements ILogger {
+  private data: Map<any>;
+
+  constructor() {
+    this.data = new Map();
+  }
+}
+
+class Cart implements ICart {
+  private logger: ILogger;
+
+  // Constructor Injection DI, we pass an Interface here
+  constructor(logger: ILogger) {
+    this.logger = logger;
+  }
+}
+
+const logger = new Logger();
+const cart = new Cart(logger);
+```
+
+Class `Logger` implements `ILogger` interface (abstraction) that is used in the `Cart` class and `Cart` doesn't own the `Logger` directly, it knows about it by interface, instead of direct include.
+
+It is called "inversion" since it is contrary to direct include of one class by another.
+
+#### Method Injection
+
+Or we can pass the depenency into the method:
 
 ```typescript
 class Cart {
@@ -82,8 +87,7 @@ class Cart {
       throw new Error("Service must not be null");
     }
 
-    // Command pattern
-    service.execute(this.products);
+    service.send(this.products);
   }
 }
 
@@ -92,86 +96,4 @@ const cart = new Cart();
 
 cart.sendSMSNotification(smsService);
 ```
-
-## DI in Angular
-
-A dependency is any object, value, function or service that a class needs to work but does not create itself. In other words, it creates a relationship between different parts of your application since it wouldn't work without the dependency.
-
-There are two ways that code interacts with any dependency injection system:
-
-- Code can provide, or make available, values.
-- Code can inject, or ask for, those values as dependencies.
-
-```typescript
-import { Injectable } from "@angular/core";
-
-// @Injectable decorator
-@Injectable({ providedIn: "root" })
-export class AnalyticsLogger {
-  trackEvent(category: string, value: string) {
-    console.log("Analytics event logged:", {
-      category,
-      value,
-      timestamp: new Date().toISOString(),
-    });
-  }
-}
-```
-
-and use case:
-
-```typescript
-import { Component, inject } from "@angular/core";
-import { Router } from "@angular/router";
-import { AnalyticsLogger } from "./analytics-logger";
-
-// @Component decorator
-@Component({
-  selector: "app-navbar",
-  template: ` <a href="#" (click)="navigateToDetail($event)">Detail Page</a> `,
-})
-export class NavbarComponent {
-  private router = inject(Router);
-  private analytics = inject(AnalyticsLogger);
-
-  navigateToDetail(event: Event) {
-    event.preventDefault();
-    this.analytics.trackEvent("navigation", "/details");
-    this.router.navigate(["/details"]);
-  }
-}
-```
-
-Link: https://angular.dev/guide/di
-
-## Inversion of Control (IoC)
-
-In contrast with traditional programming, in which our custom code makes calls to a library, IoC enables a framework to take control of the flow of a program and make calls to our custom code.
-
-Framework is doing the binding and instantiation of dependencies. Instead of the application having to create and use services, it is the framework that determines the moment when the instantiation is needed, using a pre-set configuration that instructs it on how to execute these tasks.
-
-Java Spring Boot with Configuration annotation:
-
-```java
-@Configuration
-public class AppConfig {
-    @Bean
-    public Store store() {
-        return new Store(item1());
-    }
-}
-```
-
-and Bean annotation:
-
-```java
-@Bean
-public Store store() {
-    Store store = new Store();
-    store.setItem(item1());
-    return store;
-}
-```
-
-Link: https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring
 
