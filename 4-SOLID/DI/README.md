@@ -21,6 +21,8 @@ There are a couple of ways in which a client can receive injected services:
 - Constructor injection, where dependencies are provided through a client's class constructor.
 - Method Injection, where dependencies are provided to a method only when required for specific functionality.
 
+There are several approaches here: Vanilla implementation with Constructor injection/Method Injection, framework annotation-based or framework configuration-based DI.
+
 Variations:
 
 - [Vanilla JS](./VanillaJS.md)
@@ -28,3 +30,4 @@ Variations:
 - [.Net](./C#-IoC.md)
 - [Angular](./Angular.md)
 - [Awilix JS](./Awilix.md)
+
