@@ -34,5 +34,5 @@ Variations:
 - [Angular](./Angular.md)
 - [Awilix JS](./Awilix.md)
 - [Spring Boot](./SpringBoot-IoC.md)
-- [.Net](./C#-IoC.md)
+- [.Net](./Net-IoC.md)
 
