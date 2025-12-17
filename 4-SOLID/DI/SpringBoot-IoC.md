@@ -8,7 +8,7 @@ In contrast with ordinary DI, IoC enables a **framework to take control of the f
 
 The IoC container is the heart of Spring Boot, responsible for:
 
-- Bean Creation: Instantiating objects (beans) defined in your application.
+- Bean Creation: Instantiating objects (beans) defined in your application. Bean is the object that is a dependency that is handled by Spring Boot framework.
 - Dependency Injection: Wiring beans together by injecting dependencies.
 - Lifecycle Management: Handling initialization and destruction of beans.
 
@@ -29,7 +29,7 @@ public interface ISessionService {
     void logout();
 }
 
-// Sercice implementation
+// Service implementation
 @Component
 public class SessionService implements ISessionService {
     public void logout() {
@@ -37,7 +37,7 @@ public class SessionService implements ISessionService {
     }
 }
 
-// Controller
+// Consumer
 @Component
 public class SessionController {
     private final ISessionService sessionService;
@@ -56,6 +56,5 @@ public class Application {
         SessionController controller = context.getBean(SessionService.class);
     }
 }
-
 ```
 
