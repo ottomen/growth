@@ -2,7 +2,13 @@
 
 Most common data structure you can imagine. Most popular.
 
-You need to know the difference between concept of an Array as an Abstract Data Type (a fixed block of memory) and JavaScript Array that is a high-level abstraction provided by C++ underlying low-level implementation.
+You need to know the difference between concept of an Array as an Abstract Data Type, Array as an object in memory, and JavaScript Array that is a high-level abstraction provided by C++ underlying low-level implementation.
+
+- **Array as an Abstract Data Type**. This is the mathematical definition. It defines what an array does, not how its built.
+- **Array as an object in memory**. This is the "Lower-Level" implementation (like in C or C++). It explains how the memory is actually used.
+- **JavaScript Array**. This is the object that is provided by engines like V8 engine. It hides the physical constraints of memory from us.
+
+Here we are talking about **JavaScript Array**.
 
 ## Big O and operations
 
@@ -32,9 +38,9 @@ console.log(arr.some((item) => item === 10));
 
 ## When to use
 
-When you need an Iteration protocol, when you have homogenized data, when you have a need LIFO, FIFO operations, and you don't care about finding, filtering the items too much.
+When you need an Iteration protocol, when you have homogenized data, when you have a need LIFO operations, search by index or you need to retain a specific order.
 
 ## When to avoid
 
-When you want filtering, search, shift/unshift operation, massive datasets.
+When you want filtering, search by value, shift/unshift operation, FIFO, massive datasets. Hashmaps or other data structures might be better.
 
