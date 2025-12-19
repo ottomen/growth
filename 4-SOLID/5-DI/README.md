@@ -13,7 +13,7 @@ It follows the idea of **loosely coupled modules** and it tells:
 - High-level modules should not import anything from low-level modules. Both should depend on abstractions (interfaces). It means to avoid direct import but use arguments.
 - Abstractions should not depend on details. Details (Concrete implementations) should depend on abstractions. It means using Interfaces, not concrete implementations.
 
-## Dependency injection
+## Implementation: Dependency injection
 
 This is an implementation of Dependency inversion. It says what the code should look like.
 
