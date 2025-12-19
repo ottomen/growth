@@ -20,6 +20,7 @@ where:
 - `g(x)` is an arbitrary time complexity, simplified "benchmark" function
 - `M` is a scalar value that acts as a compensation for hardware, compilers, and fixed overhead
 - `x` is the input size
+- $x \geq x_0$ is the idea of $x \to \infty$ and is about "think big"
 
 ### Benchmark functions `g(x)` types
 
@@ -37,7 +38,7 @@ where:
 
 ### Growth functions chart
 
-[<img src="./images/Comparison_computational_complexity.svg.png" width="550"/>](./images/Comparison_computational_complexity.svg.png)
+<p style="text-align: center"><img src="./images/Comparison_computational_complexity.svg.png" width="550" alt=""/></p>
 
 This chart shows the good visual example of a difference between very efficient `O(log n)` and linear `O(n)`. With the small input of `10` the difference is kind of fine, but the more input growth the more of a problem it becomes.
 
