@@ -2,7 +2,9 @@
 
 [<img src="./images/desk.jpg" width="1280" alt="desk"/>](./images/desk.jpg)
 
-This is a 2 month crash course into the fundamentals of CS. It follows the bottom-up approach, where every next chapter should based on the good understanding of all previous chapters.
+This is a 2 month crash course into the fundamentals of CS. 
+
+It follows the bottom-up approach, where every next chapter should based on the good understanding of all previous chapters.
 
 **Table of contents:**
 
