@@ -38,7 +38,7 @@ where:
 
 ### Growth functions chart
 
-<p style="text-align: center"><img src="./images/Comparison_computational_complexity.svg.png" width="550" alt=""/></p>
+[<img src="./images/Comparison_computational_complexity.svg.png" width="550"/>](./images/Comparison_computational_complexity.svg.png)
 
 This chart shows the good visual example of a difference between very efficient `O(log n)` and linear `O(n)`. With the small input of `10` the difference is kind of fine, but the more input growth the more of a problem it becomes.
 
