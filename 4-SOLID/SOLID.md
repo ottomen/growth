@@ -15,9 +15,8 @@ It's like an idea "Be a good man". But it is not a set of instructions, it is an
 
 **Principles:**
 
-- [Single responsibility principle](./1-SR/)
-- [Open–closed principle]()
+- [Single responsibility principle](./1-SR/Single%20Responsibility%20principle.md)
+- [Open–closed principle](./2-OC/)
 - [Liskov substitution principle]()
 - [Interface segregation principle]()
-- [Dependency inversion principle](./5-DI/)
-
+- [Dependency inversion principle](./5-DI/1-Dependency%20inversion%20principle.md)

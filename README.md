@@ -8,7 +8,7 @@ It follows the bottom-up approach, where every next chapter should based on the 
 
 **Table of contents:**
 
-1. [Data structures](./1-data-structures/)
+1. [Data structures](./1-data-structures/1-DataStructures.md)
    - [Array](./1-data-structures/Array.md)
    - [Stack](./1-data-structures/Stack.md)
    - [Queue](./1-data-structures/Queue.md)
@@ -17,16 +17,15 @@ It follows the bottom-up approach, where every next chapter should based on the 
    - [Binary Search Tree](./1-data-structures/BinarySearchTree.md)
    - [Matrix](./1-data-structures/Matrix.md)
    - [Graph](./1-data-structures/Graph.md)
-2. [Algorithms](./2-algorithms/)
+2. [Algorithms](./2-algorithms/1-Algorithms.md)
    - [Binary Search](./2-algorithms/binary-search.ipynb)
    - [Quick Sort](./2-algorithms/quick-sort.ipynb)
    - [Prefix Sum](./2-algorithms/prefix-sum.ipynb)
    - [DFS/BFS](./2-algorithms/DFS-BFS.ipynb)
-3. [Patterns](./3-patterns/)
+3. [Patterns](./3-patterns/1-Patterns.md)
    - [Event Emitter](./3-patterns/event-emitter/)
    - [Observer](./3-patterns/observer/)
    - [Proxy](./3-patterns/proxy/)
-4. [SOLID](./4-SOLID/)
-   - [Single responsibility principle](./4-SOLID/1-SR/)
-   - [Dependency inversion principle](./4-SOLID//5-DI/)
-
+4. [SOLID](./4-SOLID/SOLID.md)
+   - [Single responsibility principle](./4-SOLID/1-SR/Single%20Responsibility%20principle.md)
+   - [Dependency inversion principle](./4-SOLID/5-DI/1-Dependency%20inversion%20principle.md)
