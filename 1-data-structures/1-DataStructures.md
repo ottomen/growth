@@ -62,3 +62,6 @@ While `Array` is the part of JS language, the `Stack` is not, and you need to im
 - [Matrix](./Matrix.md)
 - [Graph](./Graph.md)
 
+## To read:
+
+- A Common-Sense Guide to Data Structures and Algorithms by Jay Wengrow - easy to read, covers all basics.

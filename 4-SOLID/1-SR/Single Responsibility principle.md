@@ -1,6 +1,6 @@
 # Single Responsibility principle
 
-It states "A module should be responsible to one, and only one, actor.".
+"A module should be responsible to one, and only one, actor.".
 
 Robert C. Martin expresses the principle as, "A class should have only one reason to change" and adds another explanation as "Gather together the things that change for the same reasons. Separate those things that change for different reasons".
 
@@ -30,7 +30,7 @@ These answers will help you with the implementation of Single Responsibility pri
 This principle has no defined implementation, so for implementation we can consider the following set of examples.
 Let's pick E-commerce notification service as an example.
 
-## Bad Single Responsibility
+Bad example:
 
 ```javascript
 // Violation: One file and class, multiple actors/reasons to change.
@@ -46,30 +46,39 @@ class NotificationService {
 }
 ```
 
-## Good Single Responsibility
+Good example:
 
-```javascript
+```typescript
+interface INotificationService {
+  send(user: User, content: string): void;
+}
+
 // Dedicated file and service for Email logic
-class EmailService {
+class EmailService implements INotificationService {
   send(emailAddress, content) {}
 }
 
 // Dedicated file and service for SMS logic
-class SmsService {
+class SmsService implements INotificationService {
   send(phoneNumber, content) {}
 }
 
 // Orchestrator, separated file
 class NotificationProvider {
-  constructor(emailService, smsService) {
-    this.email = emailService;
-    this.sms = smsService;
+  private providers: Map<string, INotificationService>;
+
+  constructor(providers: Map<string, INotificationService>) {
+    this.providers = providers;
   }
 
   // Send notifications
-  notifyUser(user, message) {
-    if (user.pref === "EMAIL") this.email.send(user.email, message);
-    if (user.pref === "SMS") this.sms.send(user.phone, message);
+  notifyUser(user: User, message: string) {
+    // We are connecting service we need to use by the "pref" property from the User class itself
+    const service = this.providers.get(user.pref);
+
+    if (service) {
+      service.send(user, message);
+    }
   }
 }
 ```
@@ -85,4 +94,3 @@ If we follow the idea of being this class, if I were the Notification class:
 - **What dependencies I need?** - I need to have SMS, EMAIL, PUSH services as a DIs, with same API via Interfaces, where every of them will have same "shape", like `.send()`, other methods. I need to store the incoming, sent, failed notifications into the DB table.
 
 - **What top-level layer I belong to?** - Hmm, this needs some investigation.
-
