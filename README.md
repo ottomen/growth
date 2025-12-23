@@ -28,7 +28,7 @@ It follows the bottom-up approach, where every next chapter should based on the 
    - [Proxy](./3-patterns/proxy/)
 4. [SOLID](./4-SOLID/SOLID.md)
    - [Single responsibility principle](./4-SOLID/1-SR/Single%20Responsibility%20principle.md)
-   - [Open–closed principle](./4-SOLID/2-OC/Open–closed%20principle.md)
+   - [Open-closed principle](./4-SOLID/2-OC/Open-closed%20principle.md)
    - [Liskov substitution principle](./4-SOLID/3-LS/Liskov%20substitution%20principle.md)
    - [Interface segregation principle](./4-SOLID/4-IS/Interface%20segregation%20principle.md)
    - [Dependency inversion principle](./4-SOLID/5-DI/1-Dependency%20inversion%20principle.md)
