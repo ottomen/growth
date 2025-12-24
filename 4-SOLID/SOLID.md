@@ -32,7 +32,7 @@ It's like an idea "Be a good man". But it is not a set of instructions, it is an
 **Principles:**
 
 - [Single responsibility principle](./1-SR/Single%20Responsibility%20principle.md)
-- [Open-closed principle](./2-OC/Open-closed%20principle.md)
+- [Open-closed principle](./2-OC/OpenСlosed%20principle.md)
 - [Liskov substitution principle](./3-LS/Liskov%20substitution%20principle.md)
 - [Interface segregation principle](./4-IS/Interface%20segregation%20principle.md)
 - [Dependency inversion principle](./5-DI/1-Dependency%20inversion%20principle.md)
