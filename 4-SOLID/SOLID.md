@@ -1,8 +1,8 @@
 # SOLID principles
 
-SOLID is an acronym for 5 principles of Object Oriented Class Design intended to make source code more understandable, flexible, and maintainable. Software engineer and instructor Robert C. Martin introduced the basic principles of SOLID design in his 2000 paper "Design Principles and Design Patterns".
+SOLID is an acronym for 5 principles of Object Oriented Design paradygm intended to make source code more understandable, flexible, and maintainable. They were introduced by Robert C. Martin in his 2000 paper "Design Principles and Design Patterns".
 
-Be aware: SOLID is not a checklist of 5 independent rules - it is a single, interconnected philosophy.
+SOLID is not a list of 5 independent rules - it is a single, interconnected philosophy where every of them is connected to others. And these 5 items are basically a selection of principles defined by key software engineers from 90s.
 
 Original article "Design Principles and Design Patterns" was focused on the idea of system design rot because of the following root causes: rigidity, fragility, immobility, and viscosity.
 
@@ -19,6 +19,8 @@ Original article "Design Principles and Design Patterns" was focused on the idea
 Why do we care about this thing? "Is it relevant to JavaScript? I've heard that only guys from Java/.Net should follow this".
 
 Well, if you want to build complex systems on any language you need to have a set of abstractions, principles that will allow you to have a separation of concerns, order, structure, scalability and maintainability.
+
+With SOLID principles you start thinking about the program as a set of blocks that you can swap, extend, isolate and plug with each others, without breaking things.
 
 ## Principles are not the concrete implementations
 

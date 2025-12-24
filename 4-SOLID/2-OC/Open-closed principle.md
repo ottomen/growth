@@ -1,6 +1,6 @@
 # Open-closed principle
 
-"A module should be open for extension but closed for modification".
+> "A module should be open for extension but closed for modification"
 
 As Robert C. Martin says, "Of all the principles of object oriented design, this is the most important.".
 
@@ -9,11 +9,11 @@ As Robert C. Martin says, "Of all the principles of object oriented design, this
 It is coming from Bertrand Meyer's book "Object-Oriented Software Construction" from 1988 and it means "We should write our modules so that they can be extended, without requiring them to be modified. In other
 words, we want to be able to change what the modules do, without changing the source code of the modules".
 
-It means we need to implement such Class structure that will allow us to plug, pass new instances, but without direct code changes of this Class.
+It means we need to implement such Class structure that will allow us to plug, pass new instances, but without direct code changes of already created methods.
 
 Why it is important? If you have a working, tested code - the less you change the code the better. And if you have a chance not to modify the code - this is what we need to have.
 
-It means we need to learn to write code that should be safe from any changes. This is a weird but important concept.
+We need to learn to write code that should be safe from any changes. This is a weird but important concept.
 
 ## Implementation of Open-closed principle
 
@@ -81,13 +81,11 @@ class Order {
     this.id = id;
     this.items = items;
     this.shipping = shipping;
-    // other properties
   }
 
-  // We can extend it, add new methods, but we don't need to modify methods
   getTotalCost(): number {}
 
-  // Here we don;t need to modify the code because of the Shipping service changes or updates
+  // Here we don't need to modify the code because of the Shipping service changes or updates
   getShippingCosts(): number {
     const totalCost = this.getTotalCost();
 
@@ -108,11 +106,13 @@ const airOrder = new Order(2, ["Mouse"], airShipping);
 console.log(airOrder.getShippingCosts());
 ```
 
-Another example of this principle is a restaurant. We have kitchen with Chef, Waiter and Customer.
+## Example of a good abstraction
+
+Wecan think about a restaurant. We have kitchen with Chef, Waiter and Customer.
 
 - Chef is the main food Provider.
-- Waiter is the interface.
-- Customer is the consumer of Provider data.
+- Waiter is the Interface.
+- Customer is the Consumer of Provider data.
 
 When we have a new recipe, the Waiter is the connection point that can tell that Chef can cook a new thing to Customer. It doesn't mean that we need to redesign our kitchen or change table for Customer.
 We simply inform Customer and serve the new dish on the same table.
