@@ -1,14 +1,16 @@
-# Array
+# Array / List
 
 Most common data structure you can imagine. Most popular.
 
 You need to know the difference between concept of an Array as an Abstract Data Type, Array as an object in memory, and JavaScript Array that is a high-level abstraction provided by C++ underlying low-level implementation.
 
-- **Array as an Abstract Data Type**. This is the mathematical definition. It defines what an array does, not how its built.
 - **Array as an object in memory**. This is the "Lower-Level" implementation (like in C or C++). It explains how the memory is actually used.
+- **Array as an Abstract Data Type**. This is the mathematical definition. It defines what an array does, not how its built.
 - **JavaScript Array**. This is the object that is provided by engines like V8 engine. It hides the physical constraints of memory from us.
 
 Here we are talking about **JavaScript Array**.
+
+In a standard dynamic array, elements are stored in a contiguous block of memory. When you insert at the beginning (index 0), every existing element must be shifted one position to the right to make room.
 
 ## Big O and operations
 
@@ -27,7 +29,7 @@ console.log(arr[2]);
 arr[1] = 10;
 arr.pop();
 
-// O(n)
+// O(n) Boom!
 arr.shift();
 arr.unshift();
 arr.splice(0, 1);
