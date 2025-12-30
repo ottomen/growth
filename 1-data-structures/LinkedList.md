@@ -55,7 +55,7 @@ React DOM uses LinkedList Abstract data structure to store Hooks in the React Fi
 
 The function `mountWorkInProgressHook` is responsible for creating and appending a new hook to a centralized, per-component Linked List (stored on the Fiber node). Ii builds the horizontal list of all hooks used within a functional component (`useState`, `useEffect`, `useMemo`) during its initial "mount" phase.
 
-````ts
+```ts
 function mountWorkInProgressHook() {
   var hook = {
     memoizedState: null, // "result" of the hook after all updates are processed.
@@ -112,4 +112,4 @@ function pushEffect(tag, create, destroy, deps) {
 ```
 
 Source code: https://github.com/facebook/react/blob/1721e73e149d482a4421d4ea9f76d36a2c79ad02/packages/react-reconciler/src/ReactFiberHooks.js#L980
-````
+
