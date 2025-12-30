@@ -48,8 +48,8 @@ If you have a small dataset the overhead can be significant, the cognitive compl
 
 ## Why do I need to know about this damn Linked List
 
-In Haskell, the syntax `[1, 2, 3]` is essentially "syntactic sugar" for a singly linked list. Huh?!
-React DOM uses LinkedList Abstract data structure to store Hooks in the React Fiber component. Huh?!
+- In Haskell, the syntax `[1, 2, 3]` is essentially "syntactic sugar" for a singly linked list. Huh?!
+- React DOM uses LinkedList Abstract data structure to store Hooks in the React Fiber component. Huh?!
 
 ## Linked List in React
 
