@@ -1,6 +1,6 @@
 # Liskov substitution principle
 
-"Subclasses should be substitutable for their base classes.".
+> "Subclasses should be substitutable for their base classes.".
 
 It is based on the concept of "substitutability" - a principle in object-oriented programming stating that an object (such as a class) may be replaced by a sub-object (such as a class that extends the first class) without breaking the program.
 If `S` is a subtype of `T`, then objects of type `T` in a program may be replaced with objects of type `S` without altering any of the desirable properties of that program.
@@ -66,8 +66,6 @@ interface IArea {
 }
 
 interface IRectangle extends IArea {
-  getWidth(): number;
-  getHeight(): number;
   setWidth(width: number): void;
   setHeight(height: number): void;
 }
@@ -97,10 +95,6 @@ class Rectangle implements IRectangle {
 class Square implements ISquare {
   constructor(private side: number) {}
 
-  getSide() {
-    return this.side;
-  }
-
   setSide(side: number): void {
     this.side = side;
   }
@@ -110,5 +104,3 @@ class Square implements ISquare {
   }
 }
 ```
-
-The solution is to eliminate the incorrect inheritance and to create a better one.

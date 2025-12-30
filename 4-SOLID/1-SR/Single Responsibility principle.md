@@ -1,37 +1,42 @@
 # Single Responsibility principle
 
-"A module should be responsible to one, and only one, actor.".
+> "A module should be responsible to one, and only one, Actor"
 
 ## Origins
 
 Robert C. Martin expresses the principle as, "A class should have only one reason to change" and adds another explanation as "Gather together the things that change for the same reasons. Separate those things that change for different reasons".
 
-The problem is JavaScript as a language has no defined implementation of the Single Responsibility Principle at the language or framework level and it it easy to mess with it.
+The problem is JavaScript as a language has no defined implementation of the Single Responsibility Principle at the language or framework level and it it easy to mess with this principle.
 
 ## Naming conventions and reasoning
 
-In this principle there is a explicitly defined role of an "Actor" and "Module". It means we can use modules (files) as separation containers, and we can group the business logic of this module according to a clearly isolated class/function Role and purpose.
+We see explicitly defined role of an "Actor" and a "Module". It means we can use Modules as separation containers, and we can group the business logic of a Module according to a clearly isolated class/function Role and Purpose.
 
-This is connected to the Object-Oriented Programming paradigm of Modeling and Abstractions. We should be able to model the class/function as if it was a part of real world.
+This is connected to the idea of Modeling and Abstract thinking. We should be able to model the class/function as if it was a part of real world.
 
 ## Principle implementation example
 
-This principle has no defined implementation, so for implementation we can consider the following set of examples.
-Let's pick E-commerce notification service as an example.
+This principle has no defined implementation, but we can check the following examples.
 
 Bad example:
 
-```javascript
+```typescript
 // Violation: One file and class with multiple actors/reasons to change inside.
 class NotificationService {
-  // Looks like an Actor
+  // Looks like a separate Actor/Role
   sendEmail(emailAddress, content) {}
 
-  // What if I change SMS SDK??? It means this change will affect Email SDK
-  sendSms(phoneNumber, content) {}
+  // Looks like a separate Actor/Role
+  sendSms(phone, content) {}
 
-  // Some extra logic not connected to email or SMS entities???
-  saveToAuditLog(message) {}
+  // Some mess here
+  notifyUser(user: User, message: string) {
+    if (user.pref === "email") {
+      this.sendEmail(user.email, message);
+    } else if (user.pref === "sms") {
+      this.sendSms(user.phone, message);
+    }
+  }
 }
 ```
 
@@ -43,7 +48,6 @@ enum ENotificationChannel = {
   Email = "Email",
   SMS = "SMS"
 }
-
 type TUser = { id: number; pref: ENotificationChannel; email?: string; phone?: string };
 
 // Common interface
@@ -55,7 +59,6 @@ interface INotificationService {
 class EmailService implements INotificationService {
   send(emailAddress, content) {}
 }
-
 // Dedicated file and service for SMS logic that implements the common interface
 class SmsService implements INotificationService {
   send(phoneNumber, content) {}
@@ -97,8 +100,6 @@ const myUser: TUser = { id: 1, pref: ENotificationChannel.Email, email: "test@ex
 
 notificationProvider.notifyUser(myUser, "Your order has shipped!");
 ```
-
-In the first example `NotificationService` is a pile of entities, while the second example is a separate files/classes that are orchestrated by another entity.
 
 ## Be the Actor
 

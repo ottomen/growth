@@ -1,6 +1,6 @@
 # Dependency inversion principle (soliD)
 
-"Depend upon Abstractions. Do not depend upon concretions."
+> "Depend upon Abstractions. Do not depend upon concretions."
 
 It is a principle as well, not the some implementation. It is related to IoC but is more focused on dependencies area.
 
@@ -37,4 +37,3 @@ Variations:
 - [Awilix JS](./Awilix.md)
 - [Spring Boot](./SpringBoot-IoC.md)
 - [.Net](./Net-IoC.md)
-

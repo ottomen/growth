@@ -1,8 +1,8 @@
 # SOLID principles
 
-SOLID is an acronym for 5 principles of Object Oriented Class Design intended to make source code more understandable, flexible, and maintainable. Software engineer and instructor Robert C. Martin introduced the basic principles of SOLID design in his 2000 paper "Design Principles and Design Patterns".
+SOLID is an acronym for 5 principles of Object Oriented Design paradygm intended to make source code more understandable, flexible, and maintainable. They were introduced by Robert C. Martin in his 2000 paper "Design Principles and Design Patterns".
 
-Be aware: SOLID is not a checklist of 5 independent rules - it is a single, interconnected philosophy.
+SOLID is not a list of 5 independent rules - it is a single, interconnected philosophy where every of them is connected to others. And these 5 items are basically a selection of principles defined by key software engineers from 90s.
 
 Original article "Design Principles and Design Patterns" was focused on the idea of system design rot because of the following root causes: rigidity, fragility, immobility, and viscosity.
 
@@ -20,6 +20,8 @@ Why do we care about this thing? "Is it relevant to JavaScript? I've heard that 
 
 Well, if you want to build complex systems on any language you need to have a set of abstractions, principles that will allow you to have a separation of concerns, order, structure, scalability and maintainability.
 
+With SOLID principles you start thinking about the program as a set of blocks that you can swap, extend, isolate and plug with each others, without breaking things.
+
 ## Principles are not the concrete implementations
 
 Be aware that these are the principles that will tell you how to think, but will sometimes not tell you what to do.
@@ -30,7 +32,7 @@ It's like an idea "Be a good man". But it is not a set of instructions, it is an
 **Principles:**
 
 - [Single responsibility principle](./1-SR/Single%20Responsibility%20principle.md)
-- [Open-closed principle](./2-OC/Open-closed%20principle.md)
+- [Open-closed principle](./2-OC/OpenСlosed%20principle.md)
 - [Liskov substitution principle](./3-LS/Liskov%20substitution%20principle.md)
 - [Interface segregation principle](./4-IS/Interface%20segregation%20principle.md)
 - [Dependency inversion principle](./5-DI/1-Dependency%20inversion%20principle.md)
