@@ -8,6 +8,9 @@ It follows the bottom-up approach, where every next chapter should based on the 
 
 **Table of contents:**
 
+0. [Basics]
+   - [Primitives vs Objects](./0-basics/1-Primitives%20vs%20Objects.md)
+   - [Programming paradigms](./0-basics/2-Programming%20paradigms.md)
 1. [Data structures](./1-data-structures/1-DataStructures.md)
    - [Array](./1-data-structures/Array.md)
    - [Stack](./1-data-structures/Stack.md)
