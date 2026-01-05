@@ -11,6 +11,7 @@ It follows the bottom-up approach, where every next chapter should based on the 
 0. [Basics]
    - [Primitives vs Objects](./0-basics/1-Primitives%20vs%20Objects.md)
    - [Programming paradigms](./0-basics/2-Programming%20paradigms.md)
+   - [Code Quality](./0-basics/3-Code%20Quality.md)
 1. [Data structures](./1-data-structures/1-DataStructures.md)
    - [Array](./1-data-structures/Array.md)
    - [Stack](./1-data-structures/Stack.md)
@@ -35,3 +36,6 @@ It follows the bottom-up approach, where every next chapter should based on the 
    - [Liskov substitution principle](./4-SOLID/3-LS/Liskov%20substitution%20principle.md)
    - [Interface segregation principle](./4-SOLID/4-IS/Interface%20segregation%20principle.md)
    - [Dependency inversion principle](./4-SOLID/5-DI/1-Dependency%20inversion%20principle.md)
+5. [System Design]
+   - [System Design checklist](./5-system-design/1-System%20Design%20checklist.md)
+   - [UML diagrams](./5-system-design/2-UML%20diagrams.md)
