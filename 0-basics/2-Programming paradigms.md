@@ -40,7 +40,7 @@ begin
   L := 0;
   R := High(arr);
   while L <= R do begin
-    Mid := L + (R - L) div 2; 
+    Mid := L + (R - L) div 2;
     if arr[Mid] = target then Exit(Mid);
     if arr[Mid] < target then L := Mid + 1 else R := Mid - 1;
   end;
@@ -102,6 +102,10 @@ const binarySearch = (arr, target) => {
 
 ## Why do we care?
 
-It is easy to write a messy code that has procedural pure imperative business logic, being in an illusion of magical React functional programming. Or to thing that React v.15 class-based components are the real OOP. Or to write a class that will have a mess of SOLID principles, thinking that now you are the real engineer.
+It is easy to write a messy code that has procedural pure imperative business logic, being in an illusion of doing "real" React functional programming. Or to think that React v.15 class-based components are the real OOP. Or to write a class that will have a mess of SOLID principles, thinking that now you are the "real" programmer.
 
 Since every of these paradigms has pros and cons, we need to be mindful and consciously write the code that is OOP, functional or procedural.
+
+**What to read**:
+
+- [https://en.wikipedia.org/wiki/Programming_paradigm](https://en.wikipedia.org/wiki/Programming_paradigm)
