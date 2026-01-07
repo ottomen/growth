@@ -146,3 +146,4 @@ Since every of these paradigms has pros and cons, we need to be mindful and cons
 **What to read**:
 
 - [https://en.wikipedia.org/wiki/Programming_paradigm](https://en.wikipedia.org/wiki/Programming_paradigm)
+- Felienne H. - The Programmer's Brain. What every programmer needs to know about cognition - 2021
