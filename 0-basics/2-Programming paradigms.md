@@ -14,11 +14,11 @@ Just in case, Assembly is kind of "zero-paradigm" language. It does not follow P
 
 ## Classification
 
-All falls into 2 basic concepts: `Imperative`, `Declarative` approaches.
+All falls into 2 basic concepts: `Imperative` and `Declarative`.
 
 Imperative code directly controls execution flow and state change, explicit statements that change a program state. Declarative code declares properties of the desired result, but not how to compute it, describes what computation should perform, without specifying detailed state changes.
 
-Procedural and OOP both are about Imperative programming.
+Note: Procedural and OOP both are about Imperative programming.
 
 ## Procedural paradigm
 
@@ -115,26 +115,34 @@ OOP became the most popular in the 1990s with Java popularity. Involves dividing
 - Uses Abstraction to model complex things, similar to real world objects
 - Patterns, SOLID, other
 
-```js
-const binarySearch = (arr, target) => {
-  let [l, r] = [0, arr.length - 1];
+```typescript
+interface BinarySearch {
+  find(data: number[], targed: number): number;
+}
 
-  while (l <= r) {
-    const mid = Math.floor(l + (r - l) / 2);
+class BinarySearch implements BinarySearch {
+  find(data: number[], targed: number): number {
+    let [l, r] = [0, arr.length - 1];
 
-    if (arr[mid] === target) return mid;
+    while (l <= r) {
+      const mid = Math.floor(l + (r - l) / 2);
 
-    if (arr[mid] < target) {
-      l = mid + 1;
-    } else {
-      r = mid - 1;
+      if (arr[mid] === target) return mid;
+
+      if (arr[mid] < target) {
+        l = mid + 1;
+      } else {
+        r = mid - 1;
+      }
     }
+
+    return -1;
   }
+}
 
-  return -1;
-};
+const binarySearch = new BinarySearch();
 
-console.log("Found: ", binarySearch([10, 20, 30, 40, 50], 30));
+console.log("Found:", binarySearch.find([10, 20, 30, 40, 50], 30));
 ```
 
 ## Why do we care?
@@ -146,4 +154,7 @@ Since every of these paradigms has pros and cons, we need to be mindful and cons
 **What to read**:
 
 - [https://en.wikipedia.org/wiki/Programming_paradigm](https://en.wikipedia.org/wiki/Programming_paradigm)
+- [https://en.wikipedia.org/wiki/Determinism](https://en.wikipedia.org/wiki/Determinisma)
+- [https://en.wikipedia.org/wiki/Idempotence](https://en.wikipedia.org/wiki/Idempotence)
+- [https://en.wikipedia.org/wiki/Immutable_object](https://en.wikipedia.org/wiki/Immutable_object)
 - Felienne H. - The Programmer's Brain. What every programmer needs to know about cognition - 2021

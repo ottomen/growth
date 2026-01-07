@@ -58,11 +58,12 @@ It is especially important in React world, where we have an idea of props drilli
 ```tsx
 
 // Example 1: Every re-render creates a new object in memory that will trigger re-render of the <SomeComponent>
-<SomeComponent data={id: '', payload: payload}/>
+<SomeComponent data={{id: '', payload: payload}}/>
 
 // Example 2: We need to be mindful what to do with the "data" object, do we need to apply memoization or not, about the trade-offs
 export const SomeComponent = ({ data }) => {
     const filteredData = data.payload.filter((item) => {...});
+    //...
 }
 
 // Example 3: We create an object and propagate it to chain of functions, where we have a possibility of mutations
