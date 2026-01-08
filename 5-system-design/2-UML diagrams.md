@@ -12,10 +12,42 @@ You can use different services to make UMLs, one of them is [Mermaid](https://do
 
 I would focus on the following UML types, since they are most common:
 
-1. Class diagrams: [https://docs.mermaidchart.com/mermaid-oss/syntax/classDiagram.html](https://docs.mermaidchart.com/mermaid-oss/syntax/classDiagram.html). The main building block of OOD. Defines classes, properties, methods and relations between classes.
-2. Entity Relationship Diagrams: [https://docs.mermaidchart.com/mermaid-oss/syntax/entityRelationshipDiagram.html](https://docs.mermaidchart.com/mermaid-oss/syntax/entityRelationshipDiagram.html). The high-level abstraction that will help you to decompose entities in your solution. Check and idea of Entity–relationship model [https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model) as well.
-3. Sequence diagrams: [https://docs.mermaidchart.com/mermaid-oss/syntax/sequenceDiagram.html](https://docs.mermaidchart.com/mermaid-oss/syntax/sequenceDiagram.html). Can be helpful, for exmple, in modeling of Clint-Server communication.
-4. State diagrams: [https://docs.mermaidchart.com/mermaid-oss/syntax/stateDiagram.html](https://docs.mermaidchart.com/mermaid-oss/syntax/stateDiagram.html). If you need some state-related logic, for example some OOD things that have state.
-5. Mindmap: [https://docs.mermaidchart.com/mermaid-oss/syntax/mindmap.html#mindmap](https://docs.mermaidchart.com/mermaid-oss/syntax/mindmap.html#mindmap).
+### Class diagrams
 
-You need to use them during your SYstem Design process, they will help you a lot.
+[<img src="./images/class-diagram.png" width="750"/>](./images/class-diagram.png)
+
+The main building block of OOD. Defines classes, properties, methods and relations between classes.
+
+**Link:** [https://docs.mermaidchart.com/mermaid-oss/syntax/classDiagram.html](https://docs.mermaidchart.com/mermaid-oss/syntax/classDiagram.html)
+
+### Entity Relationship Diagrams
+
+[<img src="./images/central_processing_unit.webp" width="550"/>](./images/central_processing_unit.webp)
+
+The high-level abstraction that will help you to decompose entities in your solution. Check and idea of Entity-relationship model [https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model) as well.
+
+**Link:** [https://docs.mermaidchart.com/mermaid-oss/syntax/entityRelationshipDiagram.html](https://docs.mermaidchart.com/mermaid-oss/syntax/entityRelationshipDiagram.html)
+
+### Sequence diagrams
+
+[<img src="./images/central_processing_unit.webp" width="550"/>](./images/central_processing_unit.webp)
+
+Can be helpful, for example, in modeling of Clint-Server communication.
+
+**Link:** [https://docs.mermaidchart.com/mermaid-oss/syntax/sequenceDiagram.html](https://docs.mermaidchart.com/mermaid-oss/syntax/sequenceDiagram.html)
+
+### State diagrams
+
+[<img src="./images/central_processing_unit.webp" width="550"/>](./images/central_processing_unit.webp)
+
+If you need some state-related logic, for example some OOD things that have state.
+
+**Link:** [https://docs.mermaidchart.com/mermaid-oss/syntax/stateDiagram.html](https://docs.mermaidchart.com/mermaid-oss/syntax/stateDiagram.html)
+
+### Mindmap diagram
+
+[<img src="./images/central_processing_unit.webp" width="550"/>](./images/central_processing_unit.webp)
+
+**Link:** [https://docs.mermaidchart.com/mermaid-oss/syntax/mindmap.html#mindmap](https://docs.mermaidchart.com/mermaid-oss/syntax/mindmap.html#mindmap)
+
+You need to use them during your System Design process, they will help you a lot.
