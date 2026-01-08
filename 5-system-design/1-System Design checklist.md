@@ -20,12 +20,12 @@ You need to be honest with yourself and say "Yes, now I know the problem, I know
 
 Formalized approach to the System Design is to follow the checklist, that will help you to cover the whole area.
 
-Here is the checklist:
+**Here is the checklist:**
 
 1. **Gather all the requirements**. We need to know all about the domain and the Scope. We need to make sure that we understood a Client, and they are on the same page with us regarding the vision.
-   1.1 **Functional requirements**. Specific features and operations a system must perform to meet business and user needs.
-   1.2 **Non-functional requirements**. Defines how a system should operate, focusing on performance, reliability, and user experience rather than specific features. Often overlooked.
-2. **Assumptions and Limitations**. We need to explicitly tell our assumptions and limitations. We are not magicians, we are limited by Resources, Time and Cost.
+   - 1.1 **Functional requirements**. Specific features and operations a system must perform to meet business and user needs.
+   - 1.2 **Non-functional requirements**. Defines how a system should operate, focusing on performance, reliability, and user experience rather than specific features. Often overlooked.
+2. **Assumptions and Limitations**. We need to explicitly tell our assumptions and limitations. We are not magicians, we are limited by: Resources, Time and Cost.
 3. **High-level diagramming of the system**. We need to make a sketch of the whole solution in a form of a visual diagram.
 4. **Low-level components design**. We are focusing on specific components that are tricky, or the most important, to add some clarity here. We need to create UML diagrams here.
 5. **Database layer, database schema**. DB layer planning. We need to create UML class diagrams here.
@@ -40,9 +40,9 @@ Functional requirements define the Scope (specific features and operations) a sy
 Here you need to focus on the explicit business logic. What this project is be about? What problem should it solve?
 We should get these things from stakeholders, and we should have a common ground with them. We need to know 100% that we are talking about the same thing and we are solving the problems we are expected to solve.
 
-We can use the following methods of requirement elicitations:
+**We can use the following methods of requirement elicitation:**
 
-- **Interviewing a Client**. We can schedule a series of meetings, to ask client and collect their replies. "Can you please explain your vision? What thios project is about? What is the Scope?".
+- **Interviewing a Client**. We can schedule a series of meetings, to ask client and collect their replies. "Can you please explain your vision? What this project is about? What is the Scope?".
 - **Brainstorming**. We can form a team with the Client where we will think about the unknowns, ask questions, push us towards common grounds. This is a longer form of "Interviewing a Client" that can take more than 1 meeting.
 - **Expert opinion method**. We can find people in out ream that are experts in this domain.
 - **Past experience analysis**. We can use our own experience if we did similar projects in our past.
