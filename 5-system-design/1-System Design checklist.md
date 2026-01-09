@@ -42,10 +42,11 @@ We should get these things from stakeholders, and we should have a common ground
 
 **We can use the following methods of requirement elicitation:**
 
-- **Interviewing a Client**. We can schedule a series of meetings, to ask client and collect their replies. "Can you please explain your vision? What this project is about? What is the Scope?".
-- **Brainstorming**. We can form a team with the Client where we will think about the unknowns, ask questions, push us towards common grounds. This is a longer form of "Interviewing a Client" that can take more than 1 meeting.
-- **Expert opinion method**. We can find people in out ream that are experts in this domain.
-- **Past experience analysis**. We can use our own experience if we did similar projects in our past.
+- **Client interview** - we can schedule a series of meetings, to ask client and collect their replies. "Can you please explain your vision? What this project is about? What is the Scope?".
+- **Brainstorming** - we can form a team with the Client where we will think about the unknowns, ask questions, push us towards common grounds. This is a longer form of "Interviewing a Client" that can take more than one meeting.
+- **Expert opinion method** - we can find people in out ream that are experts in this domain.
+- **By analogy** - we can use our own experience if we did similar projects in our past.
+- **5 Whys technique** - we asking "why?" question 5 times till we get the root idea [https://en.wikipedia.org/wiki/Five_whys](https://en.wikipedia.org/wiki/Five_whys)
 
 On this stage we need to get details about pure business logic of the project: list of features, auth mechanisms, integrations, payments, analytics, platforms.
 
@@ -65,13 +66,13 @@ These things are items not related to the business logic of the project. If we a
 
 **On this stage we need to get details about**:
 
-- How available and reliable should the system be?
-- How secure it should be? What is the Security model?
+- How Available and Reliable should the system be?
+- How Secure it should be? What is the Security model?
 - What is the peak load of the system?
 - How fast should the system respond to user actions?
 - How many users system might have?
 - What is the size limit on the DB side? How may tables/records?
-- What Observability tools (Logging, Metrics, Tracing) you need?
+- What Observability tools (Logging, Metrics, Tracing) the project needs?
 
 **What you should have on this stage**: list of Non-functional requirements that Client approves.
 
@@ -79,7 +80,7 @@ These things are items not related to the business logic of the project. If we a
 
 We need to be honest with ourselves. The more complex project we are designing - the more unkowns we might have. We definitely will have some limitations and some assumptions of things we don't know at the moment.
 
-Here you need to calculate:
+**Here you need to calculate:**
 
 - RPS (Requests Per Second).
 - Peak RPS (usually 2x-5x average).
@@ -87,7 +88,7 @@ Here you need to calculate:
 - Bandwidth.
 - Read/Write Ratio. Knowing if a system is "Read-Heavy" (like Twitter) or "Write-Heavy" completely changes your choice of Database and Caching strategy.
 
-And you need to create 2 lists:
+**And you need to create 2 lists:**
 
 1. **Assumptions**. Things we assume. It might be something like "I assume that integration with `{X}` service will be done via {X} Java SDK they provide. We will not make it from scratch". Or "we will have 100.000 Requests Per Second (RPS)".
 2. **Limitations**. Limitations we have. It might be something like "We have 2 months to deliver this project. We have no time to make `{4,5,6}` features, we will focus only on `{1,2,3}` features".
@@ -150,23 +151,30 @@ It is very common here to change some pieces in the big picture, to add some emb
 
 ### 8. Preliminary Estimate
 
-Besides risk and time management the work that you did above is important for a following, importatn and crucial point from a Client perspective - Estimate. Why? Because at the end of the day it is about the business, cost and ROI (Return on Investment) numbers.
+Besides risk and time management the work that you did above is important for a following, importatn and crucial point from a Client perspective - Estimate. Why? Because at the end of the day it is about the business, cost and `ROI (Return on Investment)` numbers.
 
-Do not forget that you are building this solution for a Client, not for your ego or schientific interest. You can use hours, story points, T-Shirt size estimates. Additionally, you need to be aware of Prioritization techniques, because it is very common that in the set of Resources, Time, Cost something will not fit and you will need to help a Client to pick the most important and feasible set of features to implement.
+Do not forget that you are building this solution for a Client, not for your ego or schientific interest. You can use hours, story points, T-Shirt size estimates. Additionally, you need to be aware of prioritization techniques, because it is very common that in the set of Resources, Time, Cost something will not fit and you will need to help a Client to pick the most important and feasible set of features to implement.
 
 There are several techniques for estimates:
 
 - **Brainstorm**. You and your team should spend some time on group estimates.
 - **Expert Opinion**. You can bring an expert in the needed domain, to ask their estimate.
-- **Past experience data**. You can bring up the data from you similar implementations for your past.
+- **By analogy**. You can bring up the data from you similar implementations for your past.
 
 And there are several methods of Prioritization:
 
+- **Eisenhower matrix** - Important/Urgent/Not Urgent/Unimportant matrix.
 - **100 Dollar Test**. A simple yet effective technique for prioritizing requirements. It involves giving team members a hypothetical budget of `$100`, representing limited resources, and asking them to allocate the money to different features based on their perceived value. This technique encourages team collaboration and forces stakeholders to make trade-offs between features. Example: In a project to develop a mobile banking app, team members may allocate `$50` to the feature of instant money transfers, `$30` to biometric authentication, and `$20` to bill payments.
-- **[MoSCoW method](https://en.wikipedia.org/wiki/MoSCoW_method)**. Acronym derived from the first letter of each of four prioritization categories: `M - Must have`, `S - Should have`, `C - Could have`, `W - Won’t have`.
 
 **What you should have on this stage**: you need to have some Preliminary Estimate table, at least in Excel spreadsheet format.
 
 **What to read to learn more**:
 
 - System Design Tutorial from GeeksForGeeks: [https://www.geeksforgeeks.org/system-design/system-design-tutorial/](https://www.geeksforgeeks.org/system-design/system-design-tutorial/)
+- RPS (Requests Per Second), QPS (Queries Per Second)
+- [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem)
+- [ACID (DBs)](https://en.wikipedia.org/wiki/ACID)
+- [Eisenhower method matrix](https://en.wikipedia.org/wiki/Time_management#Eisenhower_method)
+- [Gold plating](<https://en.wikipedia.org/wiki/Gold_plating_(project_management)>)
+- [Diminishing returns](https://en.wikipedia.org/wiki/Diminishing_returns)
+- [Scope creep](https://en.wikipedia.org/wiki/Scope_creep)
