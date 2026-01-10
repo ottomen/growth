@@ -12,6 +12,7 @@ It follows the bottom-up approach, where every next chapter should based on the 
    - [Primitives vs Objects](./0-basics/1-Primitives%20vs%20Objects.md)
    - [Programming paradigms](./0-basics/2-Programming%20paradigms.md)
    - [Code Quality](./0-basics/3-Code%20Quality.md)
+   - [Code Reviews](./0-basics/4-Code%20reviews.md)
 1. [Data structures](./1-data-structures/1-DataStructures.md)
    - [Array](./1-data-structures/Array.md)
    - [Stack](./1-data-structures/Stack.md)

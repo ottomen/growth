@@ -35,7 +35,7 @@ The answer might be in the formalization of code review process. We need to know
 
 Programmers mind sometimes can be in the state in-between **Imposter syndrome** and **Dunning–Kruger** effects, in a form is spectrum. One day you are in the state of Imposter syndrome with thoughts "I'm a fake, I have zero knowledge, I should be doing capentry". Another day you are in a "God mode" of Dunning–Kruger effect, with thoughts "I'm a genius, whow!".
 
-Probably, the answer is somewhere in the middle. And it is important to be aware of these 2 extremeties to stop yourself and to take a breath. We are just humans here, we need to remember that we are "Standing on the shoulders of giants" (https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants)[https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants] and we always have new things to learn.
+Probably, the answer is somewhere in the middle. And it is important to be aware of these 2 extremeties to stop yourself and to take a breath. We are just humans here, we need to remember that we are "Standing on the shoulders of giants" [https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants](https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants) and we always have new things to learn.
 
 ## Code review roles
 
