@@ -245,13 +245,21 @@ In May of 2006 Smart Bear Software company did a 10-month case study of peer cod
 
 [<img src="./images/code-review-best-practices-figure-01.gif" width="450"/>](./images/code-review-best-practices-figure-01.gif)
 
+Here you see the number of defects found per 1000 lines of code.
+
+As the amount of code under review increases reviewers become less effective at finding defects assuming a constant true number of defects per kLOC. Reviewers are most effective at reviewing small amounts of
+code.
+Anything below 200 lines produces a relatively high rate of defects, often several times the average.
+
+If the reviewer is overwhelmed with a large quantity of code he won’t give the same attention to every line as he might with a small change.
+
 **Their results allow us to conclude the following:**
 
-- LOC (lines of code) under review should be under `200`, not to exceed 400. Anything larger overwhelms reviewers and defects are not uncovered.
-- Inspection rates less than `300 LOC/hour` result in best defect detection. Rates under `500` are still good; expect to miss significant percentage of defects if faster than that.
+- LOC (lines of code) under review should be under `200 LOC`, not to exceed `400 LOC`. Anything larger overwhelms reviewers and defects are not uncovered.
+- Inspection rates less than `300 LOC/hour` result in best defect detection. Rates under `500 LOC/hour` are still good; expect to miss significant percentage of defects if faster than that.
 - Authors who prepare the review with annotations and explanations have far fewer defects than those that do not. We presume the cause to be that authors are forced to self-review the code.
-- Total review time should be less than `60 minutes`, not to exceed `90`. Defect detection rates plummet after that time.
-- Expect defect rates around `15 per hour`. Can be higher only with less than 175 LOC under review.
+- Total review time should be less than `60 minutes`, not to exceed `90 minutes`. Defect detection rates plummet after that time.
+- Expect defect rates around `15 per hour`. Can be higher only with less than `175 LOC` under review.
 
 > It can be tempting to tear through a review, assuming that someone else will catch the errors that you don't find. However, SmartBear research shows a significant drop in defect density at rates faster than `500 LOC per hour`. Code reviews in reasonable quantity, at a slower pace for a limited amount of time results in the most effective code review.
 
