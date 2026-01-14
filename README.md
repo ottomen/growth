@@ -40,3 +40,6 @@ It follows the bottom-up approach, where every next chapter should based on the 
 5. [System Design]
    - [System Design checklist](./5-system-design/1-System%20Design%20checklist.md)
    - [UML diagrams](./5-system-design/2-UML%20diagrams.md)
+6. [Testing]
+   - [Testing Prerequisites](./6-testing/1-Prerequisites.md)
+   - [Unit tests](./6-testing/2-Unit%20tests.md)
