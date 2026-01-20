@@ -8,13 +8,35 @@
 
 [<img src="./images/Testing_Pyramid.png" width="450"/>](./images/Testing_Pyramid.png)
 
-**We have here:**
+Pyramid of testing is a classical sliced model of testing, where we start from Unit tests, into Integration tests and into e2e tests. Unit tests are the main driving force here, because they are easy to maintain, create and to run. Integration tests can be a useful addition to Unit tests, to cover connections, external connections, while e2e tests are following real unser scenarios.
 
-- **Unit tests** - foundational layer, where the cost and granularity is very affordable. Here you need to focus on the function, method, class, Component. Easiest to write, most stable, dependent on implementation, and if the implementation is stable - tests are stable as well.
-- **Integration tests** - advanced variation of tests that is focused on a combination of classes, Components that form some meaningful structure altogether. More complex than unit tests.
-- **e2e tests** (User interface tests) - focused on User experience, often simulate user interactions and involve a lot of scenarios. Fragile, brittle, a subject to frequent changes.
+### Unit tests
 
-**Link:** [https://martinfowler.com/bliki/TestPyramid.html](https://martinfowler.com/bliki/TestPyramid.html)
+Foundational layer, where the cost and granularity is very affordable. Here you need to focus on the function, method, class, Component. Easiest to write, most stable, dependent on implementation, and if the implementation is stable - tests are stable as well.
+
+Most of the time used in CI/CD to test every commit to the repo.
+
+**Pros:** Cheap, fast, connected to the implementation. Atomic, traceable.
+
+**Cons:** Can't csay a lot of cons here, since unti tests are the main instrument for us to test our code.
+
+### Integration tests
+
+Aadvanced variation of tests that is focused on testing combinations of classes, Components that form some meaningful structure altogether. Can be used to test connection to external services, DBs, APIs.
+
+**Pros:** Cover the connection points between classes, functions.
+
+**Cons:** Can be challenging, because you need to mock abd spy on multiple layers of classes, methods and functions.
+
+### e2e tests (User interface tests)
+
+Focused on User experience, often simulate user interactions and involve a lot of scenarios. Fragile, brittle, a subject to frequent changes. Most of the time they are the subject of a work for a separate team (Automation QA).
+
+**Pros:** Can cover the whole flow, without access to the implementation details.
+
+**Cons:** Expensive, fragile. Can be very slow (they test real User interfaces). In the chaotic project sometimes the cost of maintenance of some of e2e tests can be higher than the benefit of having them. Usually they are in a form of automation tests, and are valuable as a quality control, with regression checks.
+
+**Link to read:** [https://martinfowler.com/bliki/TestPyramid.html](https://martinfowler.com/bliki/TestPyramid.html)
 
 ## Methods of testing
 
@@ -42,7 +64,7 @@ We have an idea of **Automated tests** and **Manual testing**. Each of them has 
 
 ### Regression testing
 
-Functional and non-functional tests to ensure that previously developed and tested software still performs as expected after a change. If not, that would be called a regression (meaning we are going back in the evolution of a project).
+Functional and non-functional tests to ensure that previously developed and tested software still performs as expected after a change. If not, that would be called a regression (a type of software bug where a feature that has worked before stops working correctly).
 
 **Link:** [https://en.wikipedia.org/wiki/Regression_testing](https://en.wikipedia.org/wiki/Regression_testing)
 
@@ -54,13 +76,13 @@ Covers the most important functionality of a component or system, used to aid as
 
 ### Load testing
 
-Testing process of putting demand on a structure or system and measuring its response. Can be applied to API testing.
+Testing process of putting demand on a structure or system and measuring its response. Can be applied to API testing, for example.
 
 **Link:** [https://en.wikipedia.org/wiki/Load_testing](https://en.wikipedia.org/wiki/Load_testing)
 
 ### Performance testing
 
-Performed to determine how a system performs in terms of responsiveness and stability under a particular workload.
+Performed to determine how a system works in terms of responsiveness and stability under a particular workload.
 
 **Link:** [https://en.wikipedia.org/wiki/Software_performance_testing](https://en.wikipedia.org/wiki/Software_performance_testing)
 
@@ -72,6 +94,7 @@ Authorized simulated cyberattack on a computer system, performed to evaluate the
 
 ### Fuzz testing
 
-Automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program.
+Fuzzing is a technique to identify security vulnerabilities by generating inputs that are likely to trigger
+issues and feeding this to the application automatically and repeatedly.
 
 **Link:** [https://en.wikipedia.org/wiki/Fuzzing](https://en.wikipedia.org/wiki/Fuzzing)

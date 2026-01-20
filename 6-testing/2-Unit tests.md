@@ -6,33 +6,6 @@ Goal on Unit-level tests is to focus on atomic piece of code: method, function, 
 
 Tests should be effective, deep and they should test edge cases. The intention here should be not to follow a happy path, but to break things.
 
-## AAA pattern
-
-The Arrange-Act-Assert pattern, also known as the AAA pattern, is a widely recognized approach to structuring tests. It was originally proposed by Bill Wake in 2001 and then mentioned in Kent Beck’s influential book "Test Driven Development: By Example" in 2002.
-
-- **Arrange:** Set up the test environment.
-- **Act:** Execute the code to test.
-- **Assert:** Verify the results.
-
-The AAA pattern enhances readability and maintainability, and is a common practice.
-
-Example with Vitest:
-
-```js
-it("should send email", () => {
-  // Arrange
-  const emailService = new EmailService();
-  const userEmail = "john-doe@site.com";
-  const content = "Lorem Ipsum...";
-
-  // Act
-  const status = emailService.send(userEmail, content);
-
-  // Assert
-  expect(status).toBe("Yep");
-});
-```
-
 ## Mocks, Spies, Fixtures
 
 They are the fundamental blocks of any tests. Besides these building block there are a lot of implementation details. It depends on the testing framework you use. You need to read the documentation.
@@ -65,7 +38,7 @@ Spy is an idea to track function/method calls, to track arguments, times the met
 
 It is important when you need to know that some piece of code triggered another piece of code, n-th times, with or without givem arguments, or opposite, was not triggered at all.
 
-Example with Vitest:
+**Spy example with Vitest:**
 
 ```js
 import * as analytics from "@/utils/analytics";
@@ -86,7 +59,7 @@ In the context of software, a test fixture is used to set up the system state an
 
 Prepared, propagated into the test from outside. It might be loading the dummy data into the database, creating some dummy file, other.
 
-Example:
+**Fixture example:**
 
 ```js
 // Fixture
@@ -107,19 +80,180 @@ it("should send email to active users", () => {
 });
 ```
 
+I love creating fixtures, because they allow me to separate dummy data from the actual test file, I'm not polluting the code.
+
 **Links:**
 
 - [https://en.wikipedia.org/wiki/Test_fixture](https://en.wikipedia.org/wiki/Test_fixture)
+
+## AAA pattern
+
+The Arrange-Act-Assert pattern, also known as the AAA pattern, is a useful approach to structuring tests. It was originally proposed by Bill Wake in 2001.
+
+- **Arrange:** Set up the test environment.
+- **Act:** Execute the code to test.
+- **Assert:** Verify the results.
+
+The AAA pattern enhances readability and maintainability, it is a common practice.
+
+**Example of AAA with Vitest:**
+
+```js
+it("should send email", () => {
+  // Arrange
+  const emailService = new EmailService();
+  const userEmail = "john-doe@site.com";
+  const content = "Lorem Ipsum...";
+
+  // Act
+  const status = emailService.send(userEmail, content);
+
+  // Assert
+  expect(status).toBe("Yep");
+});
+```
+
+## Variations of unit test tools
+
+Every library brings it's own tools, and you need to know about them.
+
+For example, with Vitest you can:
+
+**Mock Dates**
+
+```js
+describe("User", () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it("should", () => {
+    const date = new Date("Mon Jan 19 2026 21:19:00");
+
+    vi.setSystemTime(date); // We mocked the global date
+  });
+});
+```
+
+**Mock Global objects**
+
+```js
+const IntersectionObserverMock = vi.fn(
+  class {
+    disconnect = vi.fn();
+    observe = vi.fn();
+    takeRecords = vi.fn();
+    unobserve = vi.fn();
+  },
+);
+
+vi.stubGlobal("IntersectionObserver", IntersectionObserverMock);
+```
+
+**Mock Envs**
+
+```js
+// `process.env.NODE_ENV` and `import.meta.env.NODE_ENV` both
+vi.stubEnv("NODE_ENV", "production");
+```
+
+**Mock Timers**
+
+```js
+describe("User", () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+  });
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it("should", () => {
+    const date = new Date("Mon Jan 19 2026 21:19:00");
+
+    vi.advanceTimersByTime(20_000); // Move timers 20 seconds ahead
+  });
+});
+```
+
+**Mock API**
+
+You can use MSW: [https://mswjs.io/](https://mswjs.io/) for that.
+
+This lib uses WebWorkers to intercept all your request to server per endpoint, and to return extected result.
+
+```js
+// handlers.ts
+import { http, HttpResponse } from "msw";
+
+export const handlers = [
+  http.get("https://api.example.com/user", () => {
+    return HttpResponse.json({
+      id: "abc-123",
+      firstName: "John",
+      lastName: "Maverick",
+    });
+  }),
+];
+
+// server.ts
+import { setupServer } from "msw/node";
+import { handlers } from "./handlers.js";
+
+export const server = setupServer(...handlers);
+
+// unit test
+it("responds with the user data", async () => {
+  const response = await fetch("https://api.example.com/user");
+
+  await expect(response.json()).resolves.toEqual({
+    id: "abc-123",
+    firstName: "John",
+    lastName: "Maverick",
+  });
+});
+```
+
+## Snapshot testing
+
+If you need to memorize and compare DOM markup, other complex data structures - you can use Snapshot testing.
+For example, you need to make sure that the current DOM markup that your component returns will not be changed.
+
+You can do:
+
+```js
+it("toUpperCase", () => {
+  const { container } = render(<TableBody {...props} />);
+
+  expect(container).toMatchSnapshot(); // Check
+});
+```
+
+On the first run, or if there is no snapshot file it will create one, and next time it will compare exisiting snapshot to the test result.
+
+## React component testing
+
+React Testing Library builds on top of DOM Testing Library by adding APIs for working with React components.
+
+This is a useful library that provides ways to render React components, Hooks, debug, check DOM results, fire events and track a lot of other things.
+
+**Link:** [https://testing-library.com/docs/react-testing-library/intro/](https://testing-library.com/docs/react-testing-library/intro/)
 
 ## Flaky tests
 
 Flaky tests are tests that most of the time works but fail in some cases.
 
-Example of such tests is to use JS Dates and to build the tests scenario on top of that. It will work locally, but once you push it to the remote repo in another time zone it will fail, because the Date there will be converted to the server's time zone.
+Example of such tests is to use JS Date object and to build the tests scenarios on top of that. It will work locally on your device, but once you push it to the remote repo in another time zone it will fail, because the Date there will be converted to the server's time zone.
 
 Or for example some test can work isolated, but once we run tests in parallel, or in random order, some of them fail.
 
-Or test can mutate some global object, and sometimes all is good, but sometimes you have other tests failing.
+Or test can mutate some global object, and sometimes all looks good, but sometimes you see other tests failing.
+
+In this case you need do debug the problem and fix it.
 
 ## Pseudo-code approach
 
@@ -137,3 +271,21 @@ describe("FormValidator", () => {
 ```
 
 Im not thinking about the implementation here, I'm thinking about the business logic. Once I have this in the form of plain English I can start actual implementation.
+
+With this approach you will see that your unit tests will be short, readable and focused.
+
+## Locators
+
+A locator is a reference used by automation tools to identify and interact with elements on a web page.
+
+Examples of locators are: ID, ClassName, Tag, `data-testid` attributes.
+
+It is important to remember about them, if you have a separate Autoation QA team, and add Locators to your new implementations according to the project standards.
+
+## AI, Self-Healing Tests in Automation
+
+The idea here is to have a strategy that recovers from automation test fails, such as change of Locator, absence of Locator. Theoretically, with modern AI-driven Automation tests the system will recover from it, by picking a relevant element.
+
+> Consider that a web application undergoes a redesign. Previously, a `Login` button had the ID `btnLogin`, but now, it is `btnUserLogin`. A traditional automated test looking for `btnLogin` would fail, but a self-healing test can identify that the button is functionally the same, even though the ID has changed. It adjusts its parameters to look for `btnUserLogin` and continues testing without human intervention.
+
+**Link:** [https://testrigor.com/blog/self-healing-tests/](https://testrigor.com/blog/self-healing-tests/)
