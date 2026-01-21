@@ -36,7 +36,7 @@ vi.mock("./RegistrationService.js");
 
 Spy is an idea to track function/method calls, to track arguments, times the method was executed.
 
-It is important when you need to know that some piece of code triggered another piece of code, n-th times, with or without givem arguments, or opposite, was not triggered at all.
+It is important when you need to know that some piece of code triggered another piece of code, n-th times, with or without given arguments, or opposite, was not triggered at all.
 
 **Spy example with Vitest:**
 
@@ -184,7 +184,7 @@ describe("User", () => {
 
 You can use MSW: [https://mswjs.io/](https://mswjs.io/) for that.
 
-This lib uses WebWorkers to intercept all your request to server per endpoint, and to return extected result.
+This lib uses WebWorkers to intercept all your request to server per endpoint, and to return expected result.
 
 ```js
 // handlers.ts
@@ -233,7 +233,7 @@ it("toUpperCase", () => {
 });
 ```
 
-On the first run, or if there is no snapshot file it will create one, and next time it will compare exisiting snapshot to the test result.
+On the first run, or if there is no snapshot file it will create one, and next time it will compare existing snapshot to the test result.
 
 ## React component testing
 
@@ -280,7 +280,7 @@ A locator is a reference used by automation tools to identify and interact with 
 
 Examples of locators are: ID, ClassName, Tag, `data-testid` attributes.
 
-It is important to remember about them, if you have a separate Autoation QA team, and add Locators to your new implementations according to the project standards.
+It is important to remember about them, if you have a separate Automation QA team, and add Locators to your new implementations according to the project standards.
 
 ## AI, Self-Healing Tests in Automation
 

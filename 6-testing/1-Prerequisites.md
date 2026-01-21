@@ -8,7 +8,7 @@
 
 [<img src="./images/Testing_Pyramid.png" width="450"/>](./images/Testing_Pyramid.png)
 
-Pyramid of testing is a classical sliced model of testing, where we start from Unit tests, into Integration tests and into e2e tests. Unit tests are the main driving force here, because they are easy to maintain, create and to run. Integration tests can be a useful addition to Unit tests, to cover connections, external connections, while e2e tests are following real unser scenarios.
+Pyramid of testing is a classical sliced model of testing, where we start from Unit tests, into Integration tests and into e2e tests. Unit tests are the main driving force here, because they are easy to maintain, create and to run. Integration tests can be a useful addition to Unit tests, to cover connections, external connections, while e2e tests are following real user scenarios.
 
 ### Unit tests
 
@@ -18,11 +18,11 @@ Most of the time used in CI/CD to test every commit to the repo.
 
 **Pros:** Cheap, fast, connected to the implementation. Atomic, traceable.
 
-**Cons:** Can't csay a lot of cons here, since unti tests are the main instrument for us to test our code.
+**Cons:** Can't say a lot of cons here, since unit tests are the main instrument for us to test our code.
 
 ### Integration tests
 
-Aadvanced variation of tests that is focused on testing combinations of classes, Components that form some meaningful structure altogether. Can be used to test connection to external services, DBs, APIs.
+Advanced variation of tests that is focused on testing combinations of classes, Components that form some meaningful structure altogether. Can be used to test connection to external services, DBs, APIs.
 
 **Pros:** Cover the connection points between classes, functions.
 
@@ -45,7 +45,7 @@ The method is about the approach to testing, that explains what techniques we ca
 - **Black-box testing** - we have no idea how the module, application, service works, we have no access to code. The benefit of it that the tests are not tied to the implementation, and if the implementation changes tests are not changed, since they are not dependent on it.
 - **White-box testing** - we have an understanding how the system works, what's inside. Built on top of specifications, requirements.
 
-We also have an idea of **Functional** and **Non-functional** tests that are refering to the Functional and Non-functional requirements.
+We also have an idea of **Functional** and **Non-functional** tests that are referring to the Functional and Non-functional requirements.
 
 **Examples of Functional tests are:** Smoke testing, Regression testing.
 
@@ -72,7 +72,7 @@ Functional and non-functional tests to ensure that previously developed and test
 
 Covers the most important functionality of a component or system, used to aid assessment of whether main functions of the software appear to work correctly.
 
-**Link:** [https://en.wikipedia.org/wiki/Smoke*testing*(software)](<https://en.wikipedia.org/wiki/Smoke_testing_(software))
+**Link:** [https://en.wikipedia.org/wiki/Smoke_testing_(software)](https://en.wikipedia.org/wiki/Smoke_testing_(software))
 
 ### Load testing
 
@@ -88,7 +88,7 @@ Performed to determine how a system works in terms of responsiveness and stabili
 
 ### Penetration testing
 
-Authorized simulated cyberattack on a computer system, performed to evaluate the security of the system.
+Authorized simulated cyber-attack on a computer system, performed to evaluate the security of the system.
 
 **Link:** [https://en.wikipedia.org/wiki/Penetration_test](https://en.wikipedia.org/wiki/Penetration_test)
 
