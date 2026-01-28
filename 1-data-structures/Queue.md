@@ -10,7 +10,7 @@ Be aware that Array-based Queue is a non-scalable solution.
 
 | Create | Read            | Update          | Delete       | Find |
 | ------ | --------------- | --------------- | ------------ | ---- |
-| O(1)   | O(1) peek front | O(1) front only | O(n) dequeue | O(n) |
+| O(1)   | O(1) peek front | O(1) front only | O(N) dequeue | O(N) |
 
 ## Possible operations and cost
 
@@ -22,7 +22,7 @@ queue.push(1);
 console.log(queue[0]); // get first one
 queue[0] = 5;
 
-// O(n)
+// O(N)
 queue.shift(); // Wooow, this is bad!
 console.log(arr.find((item) => item === 10));
 ```
@@ -34,4 +34,3 @@ If you need to retain LIFO order of adding and removing items. The JavaScript Ev
 ## When to avoid
 
 If you need LIFO operations (use a Stack instead), search by value, when you have huge datasets. You can check Linked Lists that can give you O(1).
-

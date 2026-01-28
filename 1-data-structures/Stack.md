@@ -10,7 +10,7 @@ It is an Abstract Data Type, and it means it exists on the level on concept and 
 
 | Create | Read          | Update        | Delete   | Find |
 | ------ | ------------- | ------------- | -------- | ---- |
-| O(1)   | O(1) peek top | O(1) top only | O(1) pop | O(n) |
+| O(1)   | O(1) peek top | O(1) top only | O(1) pop | O(N) |
 
 ## Possible operations and cost
 
@@ -24,7 +24,7 @@ stack.pop();
 // O(1)
 stack[stack.length - 1]; // get the top one element
 
-// O(n)
+// O(N)
 stack.find(({ id }) => id === someId);
 ```
 
@@ -35,4 +35,3 @@ If you need to retain LIFO order of adding and removing items. For example it mi
 ## When to avoid
 
 If you need FIFO operations (use a Queue instead), search by value.
-

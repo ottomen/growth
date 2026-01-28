@@ -12,7 +12,7 @@ And you need to know the difference between passing an element as a primitive or
 
 | Create       | Read | Update | Delete | Find |
 | ------------ | ---- | ------ | ------ | ---- |
-| O(1) at head | O(n) | O(1)   | O(1)   | O(n) |
+| O(1) at head | O(N) | O(1)   | O(1)   | O(N) |
 
 ## Possible operations and cost
 
@@ -30,7 +30,7 @@ let second = new Node(1);
 // O(1)
 head.next = second;
 
-// O(n) - Accessing the 5th element
+// O(N) - Accessing the 5th element
 // Unlike an Array, we cannot do list[5]. We must loop.
 let current = head;
 for (let i = 0; i < 5; i++) {
@@ -62,7 +62,7 @@ function mountWorkInProgressHook() {
     baseState: null, // state value used as the starting point when calculating the next state.
     baseQueue: null, // LinkedList of "Update" objects that were skipped during a previous render.
     queue: null, // handles the "dispatch" side of things. For example, when you call "setState(x)", React doesn't immediately change the state. It creates an "Update" object and appends it to this queue.
-    next: null // LinkedList .next pointer to the next Hook in the sequence.
+    next: null, // LinkedList .next pointer to the next Hook in the sequence.
   };
 
   if (workInProgressHook === null) {
@@ -85,7 +85,7 @@ function pushEffect(tag, create, destroy, deps) {
     destroy: destroy, // // this is the cleanup callback we paste into "useEffect"
     deps: deps, // deps array
     // Circular
-    next: null
+    next: null,
   };
   var componentUpdateQueue = currentlyRenderingFiber$1.updateQueue;
 
@@ -108,8 +108,6 @@ function pushEffect(tag, create, destroy, deps) {
 
   return effect;
 }
-
 ```
 
 Source code: https://github.com/facebook/react/blob/1721e73e149d482a4421d4ea9f76d36a2c79ad02/packages/react-reconciler/src/ReactFiberHooks.js#L980
-

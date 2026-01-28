@@ -10,7 +10,7 @@ Interesting fact: In NumPy, there is no fundamental difference between a Matrix 
 
 | Create | Read          | Update        | Delete | Find   |
 | ------ | ------------- | ------------- | ------ | ------ |
-| O(1)   | O(1) by index | O(1) by index | O(1)   | O(n×m) |
+| O(1)   | O(1) by index | O(1) by index | O(1)   | O(N×M) |
 
 ## Possible operations and cost
 
@@ -43,4 +43,3 @@ Coordinate Systems with mapping 2D space (Games, Maps, Seating charts), mathemat
 ## When to avoid
 
 If you don't need multi-dimensional arrays.
-

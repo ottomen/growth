@@ -1,12 +1,11 @@
-# Array / List
+# Array
 
 Most common data structure you can imagine. Most popular.
 
-You need to know the difference between concept of an Array as an Abstract Data Type, Array as an object in memory, and JavaScript Array that is a high-level abstraction provided by C++ underlying low-level implementation.
+You need to know the difference between Abstract Data Types, and data types:
 
-- **Array as an object in memory**. This is the "Lower-Level" implementation (like in C or C++). It explains how the memory is actually used.
-- **Array as an Abstract Data Type**. This is the mathematical definition. It defines what an array does, not how its built.
-- **JavaScript Array**. This is the object that is provided by engines like V8 engine. It hides the physical constraints of memory from us.
+- **Array as an Abstract Data Type**. This is the conceptual definition. It defines what an Array does, not how its built.
+- **JavaScript Array**. This is the object that is provided by engines like V8 engine. It hides the physical constraints of memory from us. It is a high-level abstraction provided by C++ underlying low-level implementation. Yes, JS is build over C++ language.
 
 Here we are talking about **JavaScript Array**.
 
@@ -16,7 +15,7 @@ In a standard dynamic array, elements are stored in a contiguous block of memory
 
 | Push | Read          | Update        | Delete | Find |
 | ---- | ------------- | ------------- | ------ | ---- |
-| O(1) | O(1) by index | O(1) by index | O(n)   | O(n) |
+| O(1) | O(1) by index | O(1) by index | O(N)   | O(N) |
 
 ## Possible operations and cost
 
@@ -29,7 +28,7 @@ console.log(arr[2]);
 arr[1] = 10;
 arr.pop();
 
-// O(n) Boom!
+// O(N) Boom!
 arr.shift();
 arr.unshift();
 arr.splice(0, 1);
@@ -45,4 +44,3 @@ When you need an Iteration protocol, when you have homogenized data, when you ha
 ## When to avoid
 
 When you want filtering, search by value, shift/unshift operation, FIFO, massive datasets. Hashmaps or other data structures might be better.
-

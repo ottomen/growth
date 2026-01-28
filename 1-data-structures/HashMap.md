@@ -32,5 +32,4 @@ If you need to have search by key or value, or you need to have some unique elem
 
 ## When to avoid
 
-When you need to retain the order of elements (yes, Map object actually does retain insertion order, but still), or when you have a very small, fixed set of data where the "overhead" of the Hash Function is more expensive than a simple Array scan, ow when you have to search by value (`O(n)`).
-
+When you need to retain the order of elements (yes, Map object actually does retain insertion order, but still), or when you have a very small, fixed set of data where the "overhead" of the Hash Function is more expensive than a simple Array scan, ow when you have to search by value (`O(N)`).

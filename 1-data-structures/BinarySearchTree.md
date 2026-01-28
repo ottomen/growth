@@ -2,7 +2,7 @@
 
 [<img src="./images/Binary_search_tree.svg.png" width="350"/>](./images/Binary_search_tree.svg.png)
 
-A hierarchical data structure composed of nodes, where each node has at most two children (left and right). It is the systematic evolution of the Linked List designed specifically to solve the `O(n)` search problem.
+A hierarchical data structure composed of nodes, where each node has at most two children (left and right). It is the systematic evolution of the Linked List designed specifically to solve the `O(N)` search problem.
 
 The BST Rule: for every node, all values in the left subtree are smaller, and all values in the right subtree are larger.
 
@@ -10,7 +10,7 @@ The BST Rule: for every node, all values in the left subtree are smaller, and al
 
 | Create   | Read     | Update   | Delete   | Find     |
 | -------- | -------- | -------- | -------- | -------- |
-| O(log n) | O(log n) | O(log n) | O(log n) | O(log n) |
+| O(log N) | O(log N) | O(log N) | O(log N) | O(log N) |
 
 ## Possible operations and cost
 
@@ -43,9 +43,8 @@ function find(node, target) {
 
 ## When to use
 
-When you need to keep data sorted in this specific way while maintaining faster search/insert than an Array `O(n)` or Linked List (`O(n)`), when the size of your data changes frequently, but you still need `O(n)` efficiency.
+When you need to keep data sorted in this specific way while maintaining faster search/insert than an Array `O(N)` or Linked List (`O(N)`), when the size of your data changes frequently, but you still need `O(N)` efficiency.
 
 ## When to avoid
 
 You have small datasets and he overhead of storing two pointers per node and the complexity of recursive logic is often slower than a simple Array scan, if you only need Key-Value lookup (use Hashmap).
-
