@@ -14,7 +14,7 @@ Graphs are the systematic tool for modeling Networks. Connections can be:
 
 | Create      | Read           | Update        | Delete      | Find             |
 | ----------- | -------------- | ------------- | ----------- | ---------------- |
-| O(1) vertex | O(1) adjacency | O(1) add edge | O(V) vertex | O(V + E) BFS/DFS |
+| O(1) vertex | O(1) adjacency | O(1) add edge | O(V) vertex | O(N + M) BFS/DFS |
 
 ## Possible operations and cost
 
@@ -37,7 +37,7 @@ graph["E"] = [];
 graph["A"].push("E");
 graph["E"].push("A");
 
-// O(V + E) - BFS Search
+// O(N + M) - BFS Search
 // Systematic way to find the shortest path in an unweighted graph.
 function bfs(startNode, target) {
   const queue = [startNode];
@@ -58,4 +58,3 @@ You can use this data structure in very specific use cases like:
 ## When to avoid
 
 You don't need Graphs :)
-
