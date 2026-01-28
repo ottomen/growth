@@ -2,7 +2,7 @@
 
 [<img src="./images/part8.2-hashmap.png" width="450"/>](./images/part8.2-hashmap.png)
 
-This is second most common data structure after an Array. It can be in the form of plain object `{}` or as a `new Map()` or `new Set()` instance.
+This is second most common data structure after an Array. It can be in the form of plain object `{}` or as a `new Map()` or `new Set()` instance. They all kind of leverage hash-based logic under the hood.
 
 Be aware that all in JavaScript is a high-level abstraction over C++ low-level implementation, and while the write operation to the `Map` looks simple, the underlying layer of C++ is handling collisions and doing a lot of things there. The key (a string or object) goes through a Hash Function which turns it into an integer (index). The engine then looks up that index in a contiguous memory block.
 
